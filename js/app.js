@@ -25,9 +25,9 @@ navbarList.addEventListener("click", (e) => {
   }
 });
 
-// active section
+// Add active section
 window.addEventListener("scroll", () => {
-  const scrollOffset = window.innerHeight * 0.4; 
+  const scrollOffset = window.innerHeight * 0.4;
   sections.forEach((section) => {
     const rect = section.getBoundingClientRect();
     const link = navbarList.querySelector(`a[href="#${section.id}"]`);
@@ -42,4 +42,20 @@ window.addEventListener("scroll", () => {
   whenToScroll();
 });
 
+// Scroll to top button functionality
+function whenToScroll() {
+  const btnScroll = document.querySelector(".btn");
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    btnScroll.style.display = "block";
+  } else {
+    btnScroll.style.display = "none";
+  }
+}
 
+// Scroll to top button event listener
+document.querySelector(".btn").addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});

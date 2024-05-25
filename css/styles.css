@@ -99,7 +99,9 @@ section {
   width: 100%;
   z-index: 5;
 }
-
+.active-section {
+  background-color: rgba(0, 225, 255, 0.207);
+}
 /* Footer Styles */
 .page__footer {
   background: #000;
